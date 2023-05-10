@@ -1,0 +1,8 @@
+# ninja log v5
+71523	83007	7054159754887006	server_test.exe	cf11260371d17941
+26	27005	7054165245575053	CMakeFiles/BoostBeastServer.dir/Server/Heandler.cpp.obj	edb2129c7d5a184d
+2	27604	7054165251555839	CMakeFiles/BoostBeastServer.dir/main.cpp.obj	1070b0ea9d3029ad
+46	31354	7054165289071161	CMakeFiles/BoostBeastServer.dir/modules/testResponce.cpp.obj	fa6ff58a36af1203
+16	39653	7054165371979925	CMakeFiles/BoostBeastServer.dir/Server/Server.cpp.obj	570bb7510cc327b
+36	71476	7054165689806439	CMakeFiles/BoostBeastServer.dir/Server/Session.cpp.obj	6fcdad1d563e0e1f
+71477	82768	7054165803158623	BoostBeastServer.exe	7a8091bca10a8785

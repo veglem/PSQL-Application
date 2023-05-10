@@ -1,0 +1,3 @@
+C:/Users/vzhur/CLionProjects/BoostBeastServer/cmake-build-debug/CMakeFiles/BoostBeastServer.dir
+C:/Users/vzhur/CLionProjects/BoostBeastServer/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/vzhur/CLionProjects/BoostBeastServer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
