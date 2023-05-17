@@ -2,9 +2,9 @@
 // Created by vzhur on 05.05.2023.
 //
 
-#ifndef SERVER_TEST_SERVER_H
-#define SERVER_TEST_SERVER_H
+#pragma once
 
+#define WIN32_LEAN_AND_MEAN
 #include <boost/beast/core.hpp>
 #include <boost/beast/http.hpp>
 #include <boost/beast/version.hpp>
@@ -24,6 +24,8 @@
 
 #include "Session.h"
 #include "Heandler.h"
+
+
 
 namespace beast = boost::beast;
 namespace http = beast::http;
@@ -48,4 +50,4 @@ private:
 
 //void on_accept(const beast::error_code &ec, Server* server);
 
-#endif //SERVER_TEST_SERVER_H
+

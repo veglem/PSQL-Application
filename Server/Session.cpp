@@ -39,8 +39,8 @@ void Session::on_read(beast::error_code ec, std::size_t bytes_transferred) {
     std::string path = req_.target();
     path = path.substr(0, path.find('?'));
     if (callbacks_->heandlers_.find({path, req_.method()}) != callbacks_->heandlers_.end()){
-//        res_ = callbacks_->heandlers_.find({path, req_.method()});
-        res_ = (callbacks_->heandlers_[{path, http::verb::get}](ec, req_));
+
+        res_ = (callbacks_->heandlers_[{path, req_.method()}](ec, req_));
 
     } else{
         res_ = {http::status::not_found, req_.version()};

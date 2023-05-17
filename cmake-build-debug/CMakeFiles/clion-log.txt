@@ -1,4 +1,4 @@
-"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/vzhur/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3739.54/bin/ninja/win/ninja.exe -G Ninja -S C:\Users\vzhur\CLionProjects\BoostBeastServer -B C:\Users\vzhur\CLionProjects\BoostBeastServer\cmake-build-debug
--- Configuring done (0.3s)
+"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/vzhur/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3739.54/bin/ninja/win/ninja.exe "-DBoost_SYSTEM_LIBRARY_DEBUG=C:/Program Files/Clibs/boost_1_81_0/lib/libboost_system-mgw12-mt-d-x64-1_81.a" "-DBoost_SYSTEM_LIBRARY_RELEASE=C:/Program Files/Clibs/boost_1_81_0/lib/libboost_system-mgw12-mt-x64-1_81.a" "-DPostgreSQL_LIBRARY_DEBUG:FILEPATH=C:/Program Files/PostgreSQL/15/lib/libpq.lib" -G Ninja -S C:\Users\vzhur\CLionProjects\BoostBeastServer -B C:\Users\vzhur\CLionProjects\BoostBeastServer\cmake-build-debug
+-- Configuring done (1.7s)
 -- Generating done (0.0s)
 -- Build files have been written to: C:/Users/vzhur/CLionProjects/BoostBeastServer/cmake-build-debug

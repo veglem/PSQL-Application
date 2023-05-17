@@ -2,9 +2,9 @@
 // Created by vzhur on 06.05.2023.
 //
 
-#ifndef SERVER_TEST_SESSION_H
-#define SERVER_TEST_SESSION_H
+#pragma once
 
+#define WIN32_LEAN_AND_MEAN
 #include <boost/beast/core.hpp>
 #include <boost/beast/http.hpp>
 #include <boost/beast/version.hpp>
@@ -51,4 +51,3 @@ private:
 };
 
 
-#endif //SERVER_TEST_SESSION_H
