@@ -129,3 +129,135 @@ http::response<http::string_body> post_add_company(beast::error_code err, http::
     }
     return response;
 }
+
+http::response<http::string_body> put_change_company(beast::error_code err, http::request<http::string_body>& req){
+    auto passPos = req.target().find("?auth") + 6;
+    auto userPos = req.target().find("&user=");
+    auto namePos = req.target().find("&name=");
+    std::string password;
+    std::string username;
+    std::string comp_name;
+
+    password = req.target().substr(passPos, userPos - passPos);
+    username = req.target().substr(userPos + 6, namePos - userPos - 6);
+    comp_name = req.target().substr(namePos + 6);
+    comp_name = url_Decode(comp_name);
+
+    http::response<http::string_body> response{http::status::ok, req.version()};
+    response.set(http::field::server, BOOST_BEAST_VERSION_STRING);
+    response.set(http::field::content_type, "application/json");
+    response.keep_alive(req.keep_alive());
+    Database *db = Database::GetInstance("postgres", "1812");
+    PGconn *connection = db->getConn("postgres");
+    if (PQstatus(connection) == ConnStatusType::CONNECTION_OK) {
+        response.body() = "connected";
+    } else {
+        response.body() = PQerrorMessage(connection);
+        return response;
+    }
+    boost::json::string query ="select (password) from users where login=\'";
+    query += username + "\';";
+    PGresult *res = PQexec(connection, query.c_str());
+    if (PQresultStatus(res) == PGRES_TUPLES_OK && PQntuples(res) != 0) {
+        std::string db_pass = PQgetvalue(res, 0, 0);
+        if (db_pass == password) {
+            PQclear(res);
+            //update orders set status='',
+            //                  price='',
+            //                  deadline='',
+            //                  start_date='' where project_id=(select id from project where project_name='');
+            boost::json::value req_body = boost::json::parse(req.body());
+            query = "update client_company set email='";
+            query += req_body.at("email").as_string();
+            query +="',\ndescription='" ;
+            query += req_body.at("description").as_string();
+            query += "',\n company_name='";
+            query += req_body.at("company_name").as_string().c_str();
+            query += "' where company_name ='";
+            query += comp_name;
+            query += "';";
+
+
+            res = PQexec(connection, query.c_str());
+            boost::json::array res_json;
+            PQexec(connection, query.c_str());
+            if (PQresultStatus(res) == PGRES_COMMAND_OK){
+                boost::json::object session;
+                session["status"] = "ok";
+                response.body() = serialize(session);
+            } else{
+                boost::json::object session;
+                session["status"] = "error";
+                response.body() = serialize(session);
+            }
+        } else {
+            boost::json::object session;
+            session["status"] = "wrong password";
+            response.body() = serialize(session);
+        }
+    } else {
+        boost::json::object session;
+        session["status"] = "wrong username";
+        response.body() = serialize(session);
+    }
+    return response;
+}
+
+http::response<http::string_body> del_company(beast::error_code err, http::request<http::string_body>& req){
+    auto passPos = req.target().find("?auth") + 6;
+    auto userPos = req.target().find("&user=");
+    auto namePos = req.target().find("&name=");
+    std::string password;
+    std::string username;
+    std::string comp_name;
+
+    password = req.target().substr(passPos, userPos - passPos);
+    username = req.target().substr(userPos + 6, namePos - userPos - 6);
+    comp_name = req.target().substr(namePos + 6);
+    comp_name = url_Decode(comp_name);
+
+    http::response<http::string_body> response{http::status::ok, req.version()};
+    response.set(http::field::server, BOOST_BEAST_VERSION_STRING);
+    response.set(http::field::content_type, "application/json");
+    response.keep_alive(req.keep_alive());
+    Database *db = Database::GetInstance("postgres", "1812");
+    PGconn *connection = db->getConn("postgres");
+    if (PQstatus(connection) == ConnStatusType::CONNECTION_OK) {
+        response.body() = "connected";
+    } else {
+        response.body() = PQerrorMessage(connection);
+        return response;
+    }
+    boost::json::string query ="select (password) from users where login=\'";
+    query += username + "\';";
+    PGresult *res = PQexec(connection, query.c_str());
+    if (PQresultStatus(res) == PGRES_TUPLES_OK && PQntuples(res) != 0) {
+        std::string db_pass = PQgetvalue(res, 0, 0);
+        if (db_pass == password) {
+            PQclear(res);
+            query = "delete from users_and_companies where id_company=(select id from client_company where company_name='" + comp_name + "');";
+            query += "delete from client_company where company_name='" + comp_name +"';";
+            res = PQexec(connection, query.c_str());
+
+            PQexec(connection, query.c_str());
+            if (PQresultStatus(res) == PGRES_COMMAND_OK){
+                boost::json::object session;
+                session["status"] = "ok";
+                response.body() = serialize(session);
+            } else{
+                boost::json::object session;
+                session["status"] = "error";
+                response.body() = serialize(session);
+            }
+        } else {
+            boost::json::object session;
+            session["status"] = "wrong password";
+            response.body() = serialize(session);
+        }
+    } else {
+        boost::json::object session;
+        session["status"] = "wrong username";
+        response.body() = serialize(session);
+    }
+    return response;
+}

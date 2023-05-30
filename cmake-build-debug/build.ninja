@@ -145,6 +145,14 @@ build CMakeFiles/BoostBeastServer.dir/modules/Developer.cpp.obj: CXX_COMPILER__B
   OBJECT_DIR = CMakeFiles\BoostBeastServer.dir
   OBJECT_FILE_DIR = CMakeFiles\BoostBeastServer.dir\modules
 
+build CMakeFiles/BoostBeastServer.dir/modules/Position.cpp.obj: CXX_COMPILER__BoostBeastServer_unscanned_Debug C$:/Users/vzhur/CLionProjects/BoostBeastServer/modules/Position.cpp || cmake_object_order_depends_target_BoostBeastServer
+  DEFINES = -DBOOST_CONTAINER_NO_LIB -DBOOST_JSON_NO_LIB -DBOOST_SYSTEM_NO_LIB
+  DEP_FILE = CMakeFiles\BoostBeastServer.dir\modules\Position.cpp.obj.d
+  FLAGS = -Wall -Wextra -pedantic -pthread -lpthread -g -Og -std=gnu++11 -fdiagnostics-color=always
+  INCLUDES = -isystem "C:/Program Files/Clibs/boost_1_81_0" -isystem "C:/Program Files/Clibs" -isystem "C:/Program Files/PostgreSQL/15/include" -isystem "C:/Program Files/PostgreSQL/15/include/server"
+  OBJECT_DIR = CMakeFiles\BoostBeastServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\BoostBeastServer.dir\modules
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target BoostBeastServer
@@ -153,7 +161,7 @@ build CMakeFiles/BoostBeastServer.dir/modules/Developer.cpp.obj: CXX_COMPILER__B
 #############################################
 # Link the executable BoostBeastServer.exe
 
-build BoostBeastServer.exe: CXX_EXECUTABLE_LINKER__BoostBeastServer_Debug CMakeFiles/BoostBeastServer.dir/main.cpp.obj CMakeFiles/BoostBeastServer.dir/Server/Server.cpp.obj CMakeFiles/BoostBeastServer.dir/Server/Session.cpp.obj CMakeFiles/BoostBeastServer.dir/Server/Heandler.cpp.obj CMakeFiles/BoostBeastServer.dir/modules/testResponce.cpp.obj CMakeFiles/BoostBeastServer.dir/modules/Database.cpp.obj CMakeFiles/BoostBeastServer.dir/modules/testResponseSecond.cpp.obj CMakeFiles/BoostBeastServer.dir/modules/Auth.cpp.obj CMakeFiles/BoostBeastServer.dir/modules/Company.cpp.obj CMakeFiles/BoostBeastServer.dir/modules/Project.cpp.obj CMakeFiles/BoostBeastServer.dir/modules/urlDecode.cpp.obj CMakeFiles/BoostBeastServer.dir/modules/Developer.cpp.obj | C$:/Program$ Files/Clibs/boost_1_81_0/lib/libboost_system-mgw12-mt-d-x64-1_81.a C$:/Program$ Files/Clibs/boost_1_81_0/lib/libboost_json-mgw12-mt-d-x64-1_81.a C$:/Program$ Files/PostgreSQL/15/lib/libpq.lib C$:/Program$ Files/Clibs/boost_1_81_0/lib/libboost_container-mgw12-mt-d-x64-1_81.a
+build BoostBeastServer.exe: CXX_EXECUTABLE_LINKER__BoostBeastServer_Debug CMakeFiles/BoostBeastServer.dir/main.cpp.obj CMakeFiles/BoostBeastServer.dir/Server/Server.cpp.obj CMakeFiles/BoostBeastServer.dir/Server/Session.cpp.obj CMakeFiles/BoostBeastServer.dir/Server/Heandler.cpp.obj CMakeFiles/BoostBeastServer.dir/modules/testResponce.cpp.obj CMakeFiles/BoostBeastServer.dir/modules/Database.cpp.obj CMakeFiles/BoostBeastServer.dir/modules/testResponseSecond.cpp.obj CMakeFiles/BoostBeastServer.dir/modules/Auth.cpp.obj CMakeFiles/BoostBeastServer.dir/modules/Company.cpp.obj CMakeFiles/BoostBeastServer.dir/modules/Project.cpp.obj CMakeFiles/BoostBeastServer.dir/modules/urlDecode.cpp.obj CMakeFiles/BoostBeastServer.dir/modules/Developer.cpp.obj CMakeFiles/BoostBeastServer.dir/modules/Position.cpp.obj | C$:/Program$ Files/Clibs/boost_1_81_0/lib/libboost_system-mgw12-mt-d-x64-1_81.a C$:/Program$ Files/Clibs/boost_1_81_0/lib/libboost_json-mgw12-mt-d-x64-1_81.a C$:/Program$ Files/PostgreSQL/15/lib/libpq.lib C$:/Program$ Files/Clibs/boost_1_81_0/lib/libboost_container-mgw12-mt-d-x64-1_81.a
   FLAGS = -Wall -Wextra -pedantic -pthread -lpthread -g -Og
   LINK_LIBRARIES = "C:/Program Files/Clibs/boost_1_81_0/lib/libboost_system-mgw12-mt-d-x64-1_81.a"  "C:/Program Files/Clibs/boost_1_81_0/lib/libboost_json-mgw12-mt-d-x64-1_81.a"  "C:/Program Files/PostgreSQL/15/lib/libpq.lib"  -lwsock32  -lws2_32  "C:/Program Files/Clibs/boost_1_81_0/lib/libboost_container-mgw12-mt-d-x64-1_81.a"  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\BoostBeastServer.dir

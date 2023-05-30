@@ -56,6 +56,33 @@ http::response<http::string_body> get_position(beast::error_code err, http::requ
 
 http::response<http::string_body> post_add_dev_team(beast::error_code err, http::request<http::string_body>& req);
 
+http::response<http::string_body> put_change_company(beast::error_code err, http::request<http::string_body>& req);
+
+http::response<http::string_body> del_company(beast::error_code err, http::request<http::string_body>& req);
+
+http::response<http::string_body> put_change_project(beast::error_code err, http::request<http::string_body>& req);
+
+http::response<http::string_body> del_project(beast::error_code err, http::request<http::string_body>& req);
+
+http::response<http::string_body> put_developer(beast::error_code err, http::request<http::string_body>& req);
+
+http::response<http::string_body> delete_developer(beast::error_code err, http::request<http::string_body>& req);
+
+http::response<http::string_body> put_position(beast::error_code err, http::request<http::string_body>& req);
+
+http::response<http::string_body> delete_position(beast::error_code err, http::request<http::string_body>& req);
+
+http::response<http::string_body> add_position(beast::error_code err, http::request<http::string_body>& req);
+
+http::response<http::string_body> put_dev_team(beast::error_code err, http::request<http::string_body>& req);
+
+http::response<http::string_body> delete_dev_team(beast::error_code err, http::request<http::string_body>& req);
+
+http::response<http::string_body> get_dev_team(beast::error_code err, http::request<http::string_body>& req);
+
+http::response<http::string_body> post_search_user(beast::error_code err, http::request<http::string_body>& req);
+
+http::response<http::string_body> get_project_for_dev(beast::error_code err, http::request<http::string_body> &req);
 
 #endif //BOOSTBEASTSERVER_RESPONCEHEADERS_H
 
